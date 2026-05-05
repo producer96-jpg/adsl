@@ -1,0 +1,181 @@
+#include <iostream>
+#include <string>
+#include <algorithm>   // for max()
+using namespace std;
+
+struct Node {
+    string word, meaning;
+    Node *left, *right;
+};
+
+// Create node
+Node* createNode(string w, string m) {
+    Node* temp = new Node;
+    temp->word = w;
+    temp->meaning = m;
+    temp->left = temp->right = NULL;
+    return temp;
+}
+
+// Add node
+Node* addNode(Node* root, string w, string m) {
+    if (root == NULL)
+        return createNode(w, m);
+
+    if (w < root->word)
+        root->left = addNode(root->left, w, m);
+    else if (w > root->word)
+        root->right = addNode(root->right, w, m);
+    else
+        cout << "Word already exists!\n";
+
+    return root;
+}
+
+// Display ascending
+void displayAsc(Node* root) {
+    if (root != NULL) {
+        displayAsc(root->left);
+        cout << root->word << " : " << root->meaning << endl;
+        displayAsc(root->right);
+    }
+}
+
+// Display descending
+void displayDesc(Node* root) {
+    if (root != NULL) {
+        displayDesc(root->right);
+        cout << root->word << " : " << root->meaning << endl;
+        displayDesc(root->left);
+    }
+}
+
+// Search
+Node* search(Node* root, string key, int &count) {
+    if (root == NULL)
+        return NULL;
+
+    count++;
+
+    if (key == root->word)
+        return root;
+    else if (key < root->word)
+        return search(root->left, key, count);
+    else
+        return search(root->right, key, count);
+}
+
+// Update
+void update(Node* root, string key) {
+    int count = 0;
+    Node* temp = search(root, key, count);
+
+    if (temp != NULL) {
+        cout << "Enter new meaning: ";
+        cin.ignore();  // clear buffer
+        getline(cin, temp->meaning);
+        cout << "Updated successfully!\n";
+    } else {
+        cout << "Word not found!\n";
+    }
+}
+
+// Height (max comparisons)
+int height(Node* root) {
+    if (root == NULL)
+        return 0;
+
+    int l = height(root->left);
+    int r = height(root->right);
+
+    return max(l, r) + 1;
+}
+
+// Delete entire tree
+void deleteTree(Node* &root) {
+    if (root != NULL) {
+        deleteTree(root->left);
+        deleteTree(root->right);
+        delete root;
+        root = NULL;
+    }
+}
+
+int main() {
+    Node* root = NULL;
+    int choice;
+    string word, meaning;
+
+    do {
+        cout << "\n1. Add Node";
+        cout << "\n2. Display Ascending";
+        cout << "\n3. Display Descending";
+        cout << "\n4. Update Node";
+        cout << "\n5. Search Node";
+        cout << "\n6. Delete Tree";
+        cout << "\n7. Max Comparisons";
+        cout << "\n8. Exit";
+        cout << "\nEnter choice: ";
+        cin >> choice;
+
+        switch(choice) {
+
+            case 1:
+                cout << "Enter word: ";
+                cin >> word;
+                cout << "Enter meaning: ";
+                cin.ignore();
+                getline(cin, meaning);
+                root = addNode(root, word, meaning);
+                break;
+
+            case 2:
+                displayAsc(root);
+                break;
+
+            case 3:
+                displayDesc(root);
+                break;
+
+            case 4:
+                cout << "Enter word to update: ";
+                cin >> word;
+                update(root, word);
+                break;
+
+            case 5: {
+                int count = 0;
+                cout << "Enter word to search: ";
+                cin >> word;
+                Node* res = search(root, word, count);
+
+                if (res != NULL) {
+                    cout << "Meaning: " << res->meaning << endl;
+                    cout << "Comparisons: " << count << endl;
+                } else {
+                    cout << "Not found!\n";
+                }
+                break;
+            }
+
+            case 6:
+                deleteTree(root);
+                cout << "Tree deleted!\n";
+                break;
+
+            case 7:
+                cout << "Maximum comparisons: " << height(root) << endl;
+                break;
+
+            case 8:
+                cout << "Exiting...\n";
+                break;
+
+            default:
+                cout << "Invalid choice!\n";
+        }
+
+    } while(choice != 8);
+
+    return 0;
+}
