@@ -28,4 +28,42 @@ Faster than linear search
 
 
 EXP2:-
+👇
+🔹 Core Idea
+
+This program builds an Expression Tree from a Prefix expression (like +--a*bc/def).
+
+Operands → leaf nodes (a, b, c…)
+Operators → internal nodes (+, -, *, /)
+🔹 How Tree is Constructed (constructTree)
+Traverse prefix from right to left
+If operand → push to stack
+If operator →
+pop 2 nodes
+make them left & right children
+push new node back
+
+👉 Stack helps build the tree correctly.
+
+🔹 Traversals
+Inorder (inorder)
+→ Left → Root → Right
+→ Gives infix form (without brackets)
+Print Expression (printTree)
+→ Adds brackets to show correct expression
+👉 Example: (a-(b*c))
+Postorder (postorder)
+→ Left → Right → Root
+→ Uses 2 stacks (non-recursive)
+🔹 Delete Tree
+Recursively deletes all nodes (postorder)
+Prevents memory leaks
+🔹 Key Concept
+Expression tree represents mathematical expressions
+Traversals give:
+Inorder → infix
+Postorder → postfix
+
+
+EXP3:-
 
