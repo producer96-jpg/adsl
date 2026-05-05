@@ -1,1 +1,31 @@
+EXP1 :-
+👇
+
+🔹 Core Idea
+
+Your program implements a dictionary using a Binary Search Tree (BST).
+
+Each node stores a word + meaning
+Words are arranged alphabetically:
+Smaller → left
+Larger → right
+🔹 Main Operations
+Insert (addNode)
+Places word in correct position using BST rules.
+Display
+Ascending → Left → Root → Right (sorted order)
+Descending → Right → Root → Left
+Search
+Compares word and moves left/right → counts comparisons.
+Update
+Searches word, then updates its meaning.
+Height (height)
+Finds longest path → shows max comparisons (worst case).
+Delete Tree
+Deletes all nodes using postorder traversal.
+🔹 Key Concept
+Faster than linear search
+
+
+EXP2:-
 
