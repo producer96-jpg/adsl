@@ -88,4 +88,41 @@ Shows it in matrix & list form
 Traverses using DFS (deep) and BFS (level-wise)
 
 EXP5:-
+👇
+
+🔹 Core Idea
+
+This program implements an Employee Management System using Sequential File Handling.
+
+Data is stored in a file → "employee.txt"
+Records are handled sequentially (one by one)
+🔹 Main Operations
+Add Employee
+Takes input
+Appends data to file (ios::app)
+Display All
+Reads file from start
+Prints all records
+Search
+Reads file sequentially
+Matches ID
+Update
+Reads old file
+Writes updated data to temp.txt
+Replaces original file
+Delete
+Copies all records except the one to delete into temp.txt
+Replaces original file
+🔹 Key Logic
+No direct editing in file
+Uses temporary file method for update & delete
+🔹 In Short
+
+👉 This is a file-based CRUD system where:
+
+Data is stored permanently in a file
+Operations are done by reading and rewriting the file
+
+
+EXP6
 
