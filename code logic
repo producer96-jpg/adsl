@@ -66,4 +66,26 @@ Postorder → postfix
 
 
 EXP3:-
+👇
+🔹 Core Idea
+
+This program represents a graph of landmarks using:
+
+Adjacency Matrix (2D array)
+Adjacency List (linked list)
+
+It also performs DFS and BFS traversal.
+🔹 Key Difference
+DFS                      	BFS
+Uses recursion	       Uses queue
+Goes deep first       	Goes level-wise
+Stack (implicit)       	Queue
+🔹 In Short
+
+This program:
+Builds a graph of landmarks
+Shows it in matrix & list form
+Traverses using DFS (deep) and BFS (level-wise)
+
+EXP5:-
 
