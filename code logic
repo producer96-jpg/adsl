@@ -87,6 +87,32 @@ Builds a graph of landmarks
 Shows it in matrix & list form
 Traverses using DFS (deep) and BFS (level-wise)
 
+
+EXP4:-
+👇
+
+🔹 Core Idea
+
+This program implements a Dictionary using AVL Tree.
+
+Stores:
+key → word
+meaning → meaning
+AVL Tree is a self-balancing Binary Search Tree
+
+🔹 Key Advantage of AVL
+BST                         AVL
+May become skewed             Always balanced
+Worst  O(n)                    O(log n)
+
+🔹 In Short
+👉 This program:
+Stores dictionary words in AVL Tree
+Automatically balances tree using rotations
+Provides fast insert, search, and display operations.
+
+
+
 EXP5:-
 👇
 
@@ -124,5 +150,34 @@ Data is stored permanently in a file
 Operations are done by reading and rewriting the file
 
 
-EXP6
+EXP6:-
+👇
+
+🔹 Core Idea
+
+This program implements a Telephone Directory using Hash Tables with:
+
+Linear Probing
+Quadratic Probing
+
+Each record stores:
+
+Phone number
+Name
+
+Logic:
+Check next position one by one
+Continue until empty slot found
+
+👉 Simple but causes clustering
+
+🔹 In Short
+
+👉 This program:
+
+Stores phone records using hashing
+Resolves collisions using:
+Linear probing
+Quadratic probing
+Supports insert, search, and display operations efficiently.
 
