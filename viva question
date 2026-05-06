@@ -1,0 +1,84 @@
+EXP1:-
+1. What is a Binary Search Tree (BST)?
+A Binary Search Tree is a binary tree where:
+Left child contains smaller values
+Right child contains larger values
+
+2. Why is BST used in this dictionary program?
+BST is used because it allows:
+Fast searching
+Easy insertion
+
+3. What are the properties of a BST?
+Left subtree contains smaller elements
+Right subtree contains larger elements
+
+4. What is the advantage of BST over arrays for searching?
+BST provides faster searching.
+Array searching → O(n)
+BST searching → O(log n) on average.
+  
+5. What is a node in a tree?
+A node is a basic element of a tree that stores:
+Data
+Address of left child
+Address of right child.
+  
+6. What are the components of a node in your program?
+Each node contains:
+word ,meaning ,left pointer ,right pointer.
+  
+7. Why did you use recursion in insertion and searching?
+Recursion makes tree traversal simple because each subtree is itself a tree.
+
+8. What is the root node?
+The topmost node of the tree is called the root node.
+
+9. What is the difference between left subtree and right subtree?
+Left subtree contains smaller values
+Right subtree contains larger values.
+  
+10. Why are words stored in lexicographical order?
+Strings are compared alphabetically in BST, so words are stored in dictionary order automatically.
+
+Code-Based Questions
+11. What is the purpose of createNode()?
+It creates a new node and initializes:
+
+12. Why do we initialize left and right as NULL?
+Because new nodes initially have no child nodes.
+
+13. Explain how addNode() works.
+If tree is empty → create new node
+
+14. What happens if a duplicate word is entered?
+Program prints:
+Word already exists!
+and duplicate insertion is not done.
+
+18. What is the purpose of the height() function?
+It calculates the height of the BST, which represents maximum comparisons in worst case.
+
+Traversal Questions
+
+22. Why does inorder traversal give sorted output in BST?
+Because BST stores smaller values on left and larger values on right.
+
+23. Which traversal is used for descending order?
+
+Reverse inorder traversal:
+Right → Root → Left.
+
+24. What is preorder traversal?
+
+Traversal order:
+Root → Left → Right.
+
+Used for copying tree structure.
+
+25. What is postorder traversal?
+
+Traversal order:
+Left → Right → Root.
+
+Used for deleting tree nodes safely.
